@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>3d Fish World</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL  -->
+  <body onload="main()" onresize="drawResize()">
+    <canvas id="webgl" width="800" height="800">
+    Please use a browser that supports "canvas"
+    </canvas>
+	<!-- Make a 'div' element to hold changeable HTML made in our JavaScript file;
+		 (where? look inside main(), inside its 'tick()' function, where we
+		 display the 'current angle' value.
+	-->
+	<div id= CurAngleDisplay></div> 
+	<div class="slidecontainer">
+		Adjust First Joint Angle(head/first body segment)
+		<input type="range" min="1" max="100" value="50" class="slider" id="segone"><br>
+		Adjust Second Joint Angle
+		<input type="range" min="1" max="100" value="50" class="slider" id="segtwo"><br>
+		Adjust Third Joint Angle
+		<input type="range" min="1" max="100" value="50" class="slider" id="segthree"><br>
+		Adjust Fourth Joint Angle
+		<input type="range" min="1" max="100" value="50" class="slider" id="segfour"><br>
+		Adjust Fifth Joint Angle(tail)
+		<input type="range" min="1" max="100" value="50" class="slider" id="segfive">
+	  </div>
+	Move Forward = up arrow<br>
+	Move Backward = down arrow<br>
+	Strafe Left = left arrow<br>
+	Strafe Right = right arrow<br>
+	Turn Left = A<br>
+	Turn Right = D<br>
+	Look Up = W<br>
+	Look Down = S <br>
+	Rotate Colorful Pyramid = horizontal + vertical mouse drag<br>
+	Use sliders to control the fish that does not have automatic joint angles.
+
+
+	<!--	Load in the JavaScript libraries supplied by our textbook 
+			(Matsuda et al., 2013 WebGL Programming Guide) that help us
+			with WebGL programming:
+	-->
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+	<!--	Finally, load in our own JavaScript program file.
+	-->
+    <script src="MilitchinskiAlex_ProjB.js"></script>
+  </body>
+</html>
