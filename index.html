@@ -33,17 +33,63 @@
   <div id="bio">
 <div class="container">
   <div class="row">
-    <div class="aboutcol1">
+    <div class="biocol1">
       <img src="images/MS.png" alt="" id="MS">
     </div>
-    <div class="aboutcol2">
-      <h1>Bio</h1>
+    <div class="biocol2">
+      <h1 id="bio-title">Bio</h1>
+      <p>I am a Computer Science student at Northwestern University in 
+        Evanston, IL. I am in the combined BS/MS degree program. I am also 
+        a Peer Mentor at Northwestern for several Computer Science courses.
+        My hobbies include soccer and esports. I enjoy software development
+        and game development. I have lived in the Chicago area for my whole 
+        life, but studied and travelled abroad several times. I speak three languages
+        (English, Spanish, and Bulgarian).
+      </p>
+      <div class="col-titles">
+        <p class="col-links active-link" onclick="opentab('skills')">Skills</p>
+        <p class="col-links" onclick="opentab('experience')">Experience</p>
+        <p class="col-links" onclick="opentab('education')">Education</p>
+      </div>
+      <div class="col-contents active-tab" id="skills">
+        <ul><li><span>Programming Languages</span><br>Python, C#, C/C++, JavaScript, HTML/CSS, OpenGL, Racket</li>
+          <li><span>Game Development</span><br>Designing and implementing games with C# and Unity</li>
+          <li><span>Web Development</span><br>Building websites with HTML, CSS, and JavaScript. 2D/3D graphics added using WebGL/OpenGL</li>
+        </ul>
+      </div>
+      <div class="col-contents" id="experience">
+        <ul><li><span>03/2022 - Current</span><br>Peer Mentor at Northwestern University</li>
+          <li><span>06/2020 - 08/2021</span><br>Doordash</li>
+        </ul>
+      </div>
+      <div class="col-contents" id="education">
+        <ul><li><span>11/2022 - 06/2024 </span><br>MS in Computer Science at Northwestern University</li>
+          <li><span>09/2020 - 06/2024</span><br>BS in Computer Science at Northwestern University</li>
+          <li><span>08/2016 - 05/2020</span><br>Niles North High School</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
   </div>
 
+<script>
+  var collinks = document.getElementsByClassName("col-links");
+  var colcontents = document.getElementsByClassName("col-contents");
 
+  function opentab(tab){
+    for(collink of collinks){
+      collink.classList.remove("active-link")
+    }
+
+    for(colcontent of colcontents){
+      colcontent.classList.remove("active-tab")
+    }
+
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tab).classList.add("active-tab");
+  }
+</script>
   </body>
 
 

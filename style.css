@@ -14,10 +14,11 @@ body{
     width: 100%;
     height: 80vh;
     
-    
+    border-radius: 25px;
     background-size: cover;
     background-image: url(images/background4.png);
     background-position: center;
+    
 }
 
 .container{
@@ -80,10 +81,78 @@ nav ul li a:hover::after{
 
 /* Bio Section*/
 #MS{
-    width: 50%;
+    width: 100%;
+    border-radius: 15px;
 }
 
 #bio{
     padding: 30px 0px;
     color: grey;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.biocol1{
+    flex-basis: 45%;
+}
+
+.biocol2{
+    flex-basis: 50%;
+}
+
+#bio-title{
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+}
+
+.col-titles{
+    display: flex;
+    margin: 20px 0px 40px;
+}
+
+.col-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.col-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #4E2A84;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.col-links.active-link::after{
+    width: 50%;
+
+}
+
+.col-contents ul li{
+    list-style: none;
+    margin: 10px 0px;
+}
+
+.col-contents ul li span{
+    color: #836EAA;
+    font-size: 14px;
+}
+
+.col-contents{
+    display: none;
+}
+
+.col-contents.active-tab{
+    display: block;
 }
