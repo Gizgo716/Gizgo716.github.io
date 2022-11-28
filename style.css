@@ -10,6 +10,23 @@ body{
     color: #fff;
 }
 
+#info{
+    color: #836EAA;
+    text-align: center;
+}
+
+#vidname{
+    color: #4E2A84;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #header{
     width: 100%;
     height: 80vh;
@@ -104,7 +121,7 @@ nav ul li a:hover::after{
     flex-basis: 50%;
 }
 
-#bio-title{
+#sub-title{
     font-size: 50px;
     font-weight: 600;
     color: white;
@@ -155,4 +172,18 @@ nav ul li a:hover::after{
 
 .col-contents.active-tab{
     display: block;
+}
+
+
+
+/* Project Section*/
+#projects{
+    padding: 30px 0px;
+}
+
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
 }
