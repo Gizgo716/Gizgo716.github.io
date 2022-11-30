@@ -10,14 +10,17 @@
   <body>
   <div id="header">
     <div class="container">
-      <nav>
+      <nav id="navbar" class="sticky">
         <img src="images/Logo.png" alt="Logo" id="logo">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Bio</a></li>
-          <li><a href="#">Previous Projects</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul id="menubar">
+          <li tabindex="1"><a href="#header">Home</a></li>
+          <li tabindex="2"><a href="#bio">Bio</a></li>
+          <li tabindex="3"><a href="#projects">Previous Projects</a></li>
+          <li tabindex="4"><a href="#contact">Contact</a></li>
+          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
+
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
       <div class="header-text">
         
@@ -103,10 +106,43 @@
 </div>
 
 
+<!-----Contact---->
+<div id="contact">
 
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fa-solid fa-envelope" alt="email icon"></i> alexmilitchinski2024@u.northwestern.edu</p>
+        <p><i class="fa-regular fa-mobile" alt="phone icon"></i> (847) 903-1556</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/alexandar-militchinski-b37292220/"><i class="fa-brands fa-linkedin" alt="LinkedIn Icon"></i></a>
+          <a href="https://m.facebook.com/alex.militchinski/"><i class="fa-brands fa-square-facebook" alt="Facebook Icon"></i></a>
+        </div>
+        <a href="images/Resume.pdf" download alt="Resume Download Button" class="btn">Download Resume</a>
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="text" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn" id="sub">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+
+  </div>
+  </div>
+  <div class="copyright">
+    <p>Made with <i class="fa-solid fa-heart"></i> by Alex Militchinski in Skokie, IL</p>
+  </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a0573695b8.js" crossorigin="anonymous"></script>
 <script>
   var collinks = document.getElementsByClassName("col-links");
   var colcontents = document.getElementsByClassName("col-contents");
+  var menu = document.getElementById("menubar")
 
   function opentab(tab){
     for(collink of collinks){
@@ -120,7 +156,37 @@
     event.currentTarget.classList.add("active-link");
     document.getElementById(tab).classList.add("active-tab");
   }
+
+  function openmenu(){
+    menu.style.right = "0px";
+
+  }
+  function closemenu(){
+    menu.style.right = "-200px";
+
+  }
+
 </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwB1LDf5-eoct-vy9ODKxg8jKaja2rqYop0e2NtOkI73l5hMnjRms-7glDsx2OWu5947g/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+      msg.innerHTML = "Message Sent"
+      setTimeout(function(){
+        msg.innerHTML = ""
+      }, 5000)
+      form.reset()
+    })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
   </body>
 
 
