@@ -108,6 +108,10 @@ nav ul li a:hover::after{
     color: #4E2A84;
 }
 
+.header-text h3{
+    font-size: 25px;
+}
+
 
 /* Bio Section*/
 #MS{
