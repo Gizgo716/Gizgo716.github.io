@@ -17,10 +17,10 @@
           <li tabindex="2"><a href="#bio">Bio</a></li>
           <li tabindex="3"><a href="#projects">Previous Projects</a></li>
           <li tabindex="4"><a href="#contact">Contact</a></li>
-          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true" onclick="closemenu()"></i>
         </ul>
 
-        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        <i class="fa-solid fa-bars" aria-hidden="true" onclick="openmenu()"></i>
       </nav>
       <div class="header-text">
         
@@ -113,22 +113,24 @@
     <div class="row">
       <div class="contact-left">
         <h1 class="sub-title">Contact Me</h1>
-        <p><i class="fa-solid fa-envelope" alt="email icon"></i> alexmilitchinski2024@u.northwestern.edu</p>
-        <p><i class="fa-regular fa-mobile" alt="phone icon"></i> (847) 903-1556</p>
+        <p><i class="fa-solid fa-envelope" aria-hidden="true" alt="email icon"></i> alexmilitchinski2024@u.northwestern.edu</p>
+        <p><i class="fa-regular fa-mobile" aria-hidden="true" alt="phone icon"></i> (847) 903-1556</p>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/alexandar-militchinski-b37292220/"><i class="fa-brands fa-linkedin" alt="LinkedIn Icon"></i></a>
-          <a href="https://m.facebook.com/alex.militchinski/"><i class="fa-brands fa-square-facebook" alt="Facebook Icon"></i></a>
+          <a href="https://www.linkedin.com/in/alexandar-militchinski-b37292220/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span id="hide0">linkedin</span></a>
+          <a href="https://m.facebook.com/alex.militchinski/"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+            <span id="hide1">Facebook</span></a>
         </div>
         <a href="images/Resume.pdf" download alt="Resume Download Button" class="btn">Download Resume</a>
       </div>
       <div class="contact-right">
         <form name="submit-to-google-sheet">
           <input type="text" id="name" name="Name" placeholder="Your Name" required>
-          <label for="name">Your Name</label>
+          <label class="lab" for="name">Your Name</label>
           <input type="text" id="email" name="Email" placeholder="Your Email" required>
-          <label for="email">Your Email</label>
+          <label class="lab" for="email">Your Email</label>
           <textarea name="Message" id="mes" rows="6" placeholder="Your Message"></textarea>
-          <label for="mes">Your Message</label>
+          <label class="lab" for="mes">Your Message</label>
           <button type="submit" class="btn" id="sub">Submit</button>
         </form>
         <span id="msg"></span>
@@ -137,7 +139,7 @@
   </div>
   </div>
   <div class="copyright">
-    <p>Made with <i class="fa-solid fa-heart"></i> by Alex Militchinski in Skokie, IL</p>
+    <p>Made with <i class="fa-solid fa-heart" aria-hidden="true"></i> by Alex Militchinski in Skokie, IL</p>
   </div>
 </div>
 

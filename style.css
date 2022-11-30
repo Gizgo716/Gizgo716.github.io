@@ -339,6 +339,17 @@ nav .fa-solid{
     top: -100px;
 }
 
+#visible-hidden {
+    display: none;
+}
+
+#hide0, #hide1{
+    display: none;
+}
+
+.lab{
+    display: none;
+}
 
 @media only screen and (max-width: 600px){
     #header{
