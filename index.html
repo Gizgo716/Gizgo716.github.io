@@ -134,11 +134,13 @@
           <label class="lab" for="phonenum">Your Phone Number</label>
           <textarea name="Message" id="mes" rows="6" placeholder="Your Message"></textarea>
           <label class="lab" for="mes">Your Message</label>
-          <p>Would you prefer to be contacted by phone or email?:</p>
+          <fieldset>
+          <legend>Would you prefer to be contacted by phone or email?:</legend>
           <input type="radio" id="em" name="Preference" value="Email" required>
           <label class="lab2" for="em">Email</label><br>
          <input type="radio" id="phon" name="Preference" value="Phone">
           <label class="lab2" for="phon">Phone</label><br>
+          </fieldset>
           <button type="submit" class="btn" id="sub">Submit</button>
         </form>
         <span id="msg"></span>
